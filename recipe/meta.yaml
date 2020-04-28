@@ -20,6 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.5
+    - pip
     - ase
     - h5py
     - numba
@@ -31,6 +32,8 @@ requirements:
 test:
   imports:
     - hiphive
+  commands:
+    - pip check
 
 about:
   home: https://hiphive.materialsmodeling.org
