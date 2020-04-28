@@ -1,5 +1,5 @@
 {% set name = "hiphive" %}
-{% set version = "0.6" %}
+{% set version = "0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 16f66fd24b22120563a234b1ee6d35e027648f9516449bed20b84ee698a814f8
+  sha256: 5c8f92ae85195d00afdece5a121dda99fad9cdd66eac1b9d28f26bdeabf167e3
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -37,7 +37,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'High-order force constants for the masses'
+  summary: High-order force constants for the masses
 
   description: |
     hiPhive is a tool for efficiently extracting high-order force 
