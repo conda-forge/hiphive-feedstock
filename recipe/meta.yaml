@@ -1,5 +1,5 @@
 {% set name = "hiphive" %}
-{% set version = "0.7.1" %}
+{% set version = "1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4374ebc778439475d16e4b2100f4f808066a57181cc9943fbf1e44d421fabad9
+  sha256: 3f38ecd4beb173a719c78e2f7dc20855b85e29c26317bfc24f0b53d7a15af89e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,20 +20,23 @@ requirements:
     - pip
   run:
     - python >=3.5
-    - pip
     - ase
     - h5py
     - numba
-    - numpy >=1.12
+    - pandas
+    - numpy <1.21,>=1.12
     - scikit-learn
     - spglib
     - sympy >=1.1
+    - trainstation
 
 test:
   imports:
     - hiphive
   commands:
     - pip check
+  requires:
+    - pip
 
 about:
   home: https://hiphive.materialsmodeling.org
