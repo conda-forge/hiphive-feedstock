@@ -1,11 +1,11 @@
-About hiphive
-=============
+About hiphive-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hiphive-feedstock/blob/main/LICENSE.txt)
 
 Home: https://hiphive.materialsmodeling.org
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hiphive-feedstock/blob/main/LICENSE.txt)
 
 Summary: High-order force constants for the masses
 
