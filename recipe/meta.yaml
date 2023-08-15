@@ -10,7 +10,7 @@ source:
   sha256: af1be045131e0d2ccfae58d513d2b6c7f3369dbe56c916e31c36d15c7c9394eb
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,13 +22,14 @@ requirements:
     - python >=3.5
     - ase
     - h5py
-    - numba
+    - numba >=0.55
     - pandas
-    - numpy <1.21,>=1.12
+    - numpy >=1.18
+    - scipy >=1.0.0
     - scikit-learn
     - spglib
     - sympy >=1.1
-    - trainstation
+    - trainstation >=0.2
 
 test:
   imports:
