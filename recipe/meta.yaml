@@ -10,17 +10,17 @@ source:
   sha256: 26ad6b55dfcb9cf486a081e1b252399350c982003abdd7cdf1b418370c00b824
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - ase
     - h5py
     - numba >=0.55
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://hiphive.materialsmodeling.org
