@@ -1,5 +1,5 @@
 {% set name = "hiphive" %}
-{% set version = "1.4" %}
+{% set version = "1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 26ad6b55dfcb9cf486a081e1b252399350c982003abdd7cdf1b418370c00b824
+  sha256: a8162686265aed88cfa6ad2721f39629102525100879484530cb7c25269ac386
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
