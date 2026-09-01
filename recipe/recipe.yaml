@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: hiphive
+  version: "1.5"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: a8162686265aed88cfa6ad2721f39629102525100879484530cb7c25269ac386
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - ase
+    - h5py
+    - numba >=0.55
+    - pandas
+    - numpy >=1.18
+    - scipy >=1.0.0
+    - scikit-learn
+    - spglib
+    - sympy >=1.1
+    - trainstation >=0.2
+
+tests:
+  - python:
+      imports:
+        - hiphive
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: High-order force constants for the masses
+  description: |
+    hiPhive is a tool for efficiently extracting high-order force
+    constants from atomistic simulations, most commonly density
+    functional theory calculations. It has been implemented in the
+    form of a Python library, which allows it to be readily
+    integrated with many first-principles codes and analysis tools
+    accessible in Python.
+  homepage: https://hiphive.materialsmodeling.org
+  repository: https://gitlab.com/materials-modeling/hiphive
+  documentation: https://hiphive.materialsmodeling.org
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - erhart1
